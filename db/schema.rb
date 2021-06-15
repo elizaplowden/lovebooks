@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_06_15_131748) do
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_lists_on_user_id"
+
   end
 
   create_table "users", force: :cascade do |t|
@@ -56,4 +57,5 @@ ActiveRecord::Schema.define(version: 2021_06_15_131748) do
   add_foreign_key "book_lists", "books"
   add_foreign_key "book_lists", "lists"
   add_foreign_key "lists", "users"
+
 end
