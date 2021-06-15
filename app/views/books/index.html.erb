@@ -2,12 +2,13 @@
 
 <div class="holder">
   <% @books.each do |book| %>
-    <div class="book-card absolutely">
+
+    <div class="book-card absolutely" id="big-<%= book.id %>">
       <div class="book-image">
         <%= image_tag book.image_url %>
       </div>
         <div class="buttons-holder">
-          <button type="button" class="btn btn-danger">Not interested</button>
+          <button type="button" class="btn btn-danger" id="<%= book.id %>">Not interested</button>
           <%= form_with model: BookList.new do |f| %>
             <%= f.hidden_field :book_id, value:book.id %>
             <%= f.hidden_field :list_id, value: current_user.lists.first.id %>
