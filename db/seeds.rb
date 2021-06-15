@@ -28,6 +28,7 @@ books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https:
 { title: 'PROJECT HAIL MARY', author: 'Andy Weir', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780593135204.jpg', isbn13: 9780593135204 }]
 
 books.each do |book|
-  subject = Book.create(title: book[:title], author: book[:author], image_url: [:book_image], isbn: [:isbn])
+  p book[:book_image]
+  subject = Book.create!(title: book[:title], author: book[:author], image_url: book[:book_image], isbn: book[:isbn])
   BookList.create(book_id: subject.id, list_id: list.id)
 end
