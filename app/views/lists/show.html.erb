@@ -1,2 +1,30 @@
-<h1>Lists#show</h1>
-<p>Find me in app/views/lists/show.html.erb</p>
+<div class="container">
+  <div class="show-container">
+    <div class="show-card-banner">
+      <h2><%= @list.name %></h2>
+    </div>
+    <div class="show-card-content">
+      <div class="book-container">
+        <% books = @list.books %>
+        <ul>
+          <% books.each do |book| %>
+            <li class="#">
+
+              <%= book.image_url %>
+              <%= book.title %>
+              <%= book.author %>
+              <%= book.isbn %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
+      <div class="show-card-links">
+        <%= link_to 'Add a new book', new_book_list_path(@list) %>
+        <%= link_to 'Go back to books', books_path%>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
