@@ -1,2 +1,19 @@
-<h1>Books#index</h1>
-<p>Find me in app/views/books/index.html.erb</p>
+<h2>Choose the books you want to add to your list!</h2>
+
+<div class="holder">
+  <% @books.each do |book| %>
+    <div class="book-card">
+      <div class="book-image">
+        <%= image_tag book.image_url %>
+      </div>
+        <div class="buttons-holder">
+          <button type="button" class="btn btn-danger">Not interested</button>
+          <%= form_with model: BookList.new do |f| %>
+            <%= f.hidden_field :book_id, value:book.id %>
+            <%= f.hidden_field :list_id, value: current_user.lists.first.id %>
+            <%= f.submit %>
+          <% end %>
+        </div>
+    </div>
+  <% end %>
+</div>
