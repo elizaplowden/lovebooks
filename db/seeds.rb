@@ -17,7 +17,6 @@ list = List.new(name:"Great Books")
 list.user_id = user.id
 list.save
 
-
 books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780316420082.jpg', isbn13: 9780316420082 },
 { title: 'MALIBU RISING', author: 'Taylor Jenkins Reid', book_image: 'https://storage.googleapis.com/du-prd/books/images/9781524798659.jpg', isbn13: 9781524798659 },
 { title: 'THE LAST THING HE TOLD ME', author: 'Laura Dave', book_image: 'https://storage.googleapis.com/du-prd/books/images/9781501171345.jpg',isbn13: 9781501171345 },
@@ -27,8 +26,9 @@ books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https:
 { title: 'THE MIDNIGHT LIBRARY', author: 'Matt Haig', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780525559474.jpg', isbn13: 9780525559474 },
 { title: 'PROJECT HAIL MARY', author: 'Andy Weir', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780593135204.jpg', isbn13: 9780593135204 }]
 
-books.each do |book|
-  p book[:book_image]
+books.each_with_index do |book, index|
   subject = Book.create!(title: book[:title], author: book[:author], image_url: book[:book_image], isbn: book[:isbn])
-  BookList.create(book_id: subject.id, list_id: list.id)
+   if index == 0
+    BookList.create(book_id: subject.id, list_id: list.id)
+  end
 end
