@@ -5,9 +5,16 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-user = User.create( email: "test@test.com")
+User.destroy_all
+List.destroy_all
+Book.destroy_all
 
-list = List.create(name:"Great Books", user: user)
+user = User.create( email: "test@test.com", password: '123456')
+
+list = List.new(name:"Great Books")
+list.user_id = user.id
+list.save
+
 
 books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780316420082.jpg', isbn13: 9780316420082 },
 { title: 'MALIBU RISING', author: 'Taylor Jenkins Reid', book_image: 'https://storage.googleapis.com/du-prd/books/images/9781524798659.jpg', isbn13: 9781524798659 },
