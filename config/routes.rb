@@ -1,10 +1,8 @@
 Rails.application.routes.draw do
-  get 'list_books/create'
-  get 'list_books/delete'
-  get 'lists/show'
-  get 'lists/new'
-  get 'lists/create'
   devise_for :users
-  root to: 'pages#home'
+  resources :books, only: [:index]
+  resources :list, only: [:show]
+  resources :book_list, only: [:create, :delete]
+  root to: 'books#index'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end
