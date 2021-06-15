@@ -1,8 +1,7 @@
 .holder {
   width: 100%;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 16px;
+  display: flex;
+  justify-content: space-around;
 }
 
 .book-card {
@@ -19,4 +18,8 @@
 .book-image {
   width: 322px;
   margin: 0 auto;
+}
+
+.absolutely {
+  position: absolute;
 }
