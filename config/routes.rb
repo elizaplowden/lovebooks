@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'list_books/create'
+  get 'list_books/delete'
   get 'lists/show'
   get 'lists/new'
   get 'lists/create'
