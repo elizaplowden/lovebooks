@@ -14,10 +14,11 @@
           <div class="book-show-info">
             <h2 class="book-title"><%= book.title %></h2>
             <h3 class="book-author"><%= book.author %></h3>
+            <div class="book-delete">
+              <%= link_to 'Remove', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
           </div>
-          <div class="book-delete">
-            <%= link_to 'Remove from list', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-          </div>
+
         </div>
         <% end %>
       </div>
