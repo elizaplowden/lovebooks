@@ -3,11 +3,7 @@ class BookListsController < ApplicationController
     @booklist = BookList.new(booklist_params)
     @book = Book.find(@booklist.book_id)
     respond_to do |format|
-      if @booklist.save
         format.js {}
-      else
-        redirect_to root_path
-      end
     end
   end
 

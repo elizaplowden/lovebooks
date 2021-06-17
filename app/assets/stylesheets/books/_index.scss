@@ -4,19 +4,24 @@
   justify-content: space-around;
 }
 
-.book-card {
-  border: 1px solid black;
+.bi-book-card {
   position: absolute;
   min-width: 400px;
-  background-color: rgb(10,10,10);
+  background-color: white;
   transition: transform 2s;
+  padding: 1.6em;
+  border-radius: 3%;
 }
 
 .buttons-holder {
-  width: 322px;
+  width: 95%;
   display: flex;
   justify-content: space-between;
-  margin: 0 auto;
+  margin: 8px auto 0;
+}
+
+.but-button {
+  width: 150px;
 }
 
 .book-image {
