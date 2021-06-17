@@ -1,10 +1,13 @@
 class BookListsController < ApplicationController
   def create
-    @book_list = BookList.new(booklist_params)
-    if @book_list.save
-      redirect_to list_path(current_user.lists.first)
-    else
-      redirect_to root_path
+    @booklist = BookList.new(booklist_params)
+    @book = Book.find(@booklist.book_id)
+    respond_to do |format|
+      if @booklist.save
+        format.js {}
+      else
+        redirect_to root_path
+      end
     end
   end
 

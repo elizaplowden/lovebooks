@@ -6,6 +6,8 @@
 
 .book-card {
   border: 1px solid black;
+  position: absolute;
+  transition: transform 2s;
 }
 
 .buttons-holder {
@@ -20,10 +22,21 @@
   margin: 0 auto;
 }
 
-.absolutely {
-  position: absolute;
-}
-
 .hidden {
   display: none;
 }
+
+/* The animation code */
+@keyframes reject {
+  from  {opacity: 1;}
+  to {opacity: 0;}
+}
+
+.rejected {
+  transform: rotate(-20deg) translateX(-250%);
+  animation-name: reject;
+  animation-duration: 2s;
+  animation-timing-function: ease-out;
+  animation-fill-mode: forwards;
+}
+
