@@ -5,17 +5,16 @@
   </div>
   <div class="lists-books-grid">
     <div class="lists-book-container">
-      <% books = @list.books %>
-      <% books.each do |book| %>
+      <% @list.book_lists.each do |book_list| %>
       <div class="lists-book-card">
         <div class="lists-book-show-image">
-          <%= image_tag book.image_url %>
+          <%= image_tag book_list.book.image_url %>
         </div>
         <div class="lists-book-show-info">
-          <h2 class="lists-book-title"><%= book.title %></h2>
-          <h3 class="lists-book-author"><%= book.author %></h3>
+          <h2 class="lists-book-title"><%= book_list.book.title %></h2>
+          <h3 class="lists-book-author"><%= book_list.book.author %></h3>
           <div class="lists-book-delete">
-            <%= link_to 'Remove', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            <%= link_to 'Remove', book_list_path(book_list), method: :delete, remote: :true, data: { confirm: 'Are you sure?' } %>
           </div>
         </div>
 

@@ -11,10 +11,11 @@ class BookListsController < ApplicationController
     end
   end
 
-  def delete
+  def destroy
     @book_list = BookList.find(params[:id])
+    @list = @book_list.list
     @book_list.destroy
-    redirect_to lists_path
+    redirect_back fallback_location: root_path
   end
 
   private
