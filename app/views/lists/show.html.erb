@@ -3,28 +3,32 @@
     <div class="show-card-banner">
       <h2><%= @list.name %></h2>
     </div>
-    <div class="show-card-content">
+    <div class="books-grid">
       <div class="book-container">
         <% books = @list.books %>
-        <ul>
-          <% books.each do |book| %>
-            <li class="#">
+        <% books.each do |book| %>
+        <div class="book-card">
+          <div class="book-show-image">
+            <%= image_tag book.image_url %>
+          </div>
+          <div class="book-show-info">
+            <h2 class="book-title"><%= book.title %></h2>
+            <h3 class="book-author"><%= book.author %></h3>
+            <div class="book-delete">
+              <%= link_to 'Remove', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+            </div>
+          </div>
 
-              <%= book.image_url %>
-              <%= book.title %>
-              <%= book.author %>
-              <%= book.isbn %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
-      <div class="show-card-links">
-
-        <%= link_to 'Go back to books', books_path%>
+        </div>
+        <% end %>
       </div>
     </div>
+    <div class="show-card-links">
+
+      <%= link_to 'Go back to books', books_path%>
+    </div>
+
 
   </div>
 </div>
-
 

@@ -1,0 +1,57 @@
+.show-container{
+  padding: 20px;
+}
+
+.show-card-banner h2{
+  margin-left: 50px;
+  font-weight: bolder;
+  font-size: 30px;
+  padding: 30px;
+}
+
+.books-grid{
+  margin: 20px 20px 60px 20px;
+}
+
+.book-container{
+  display: flex;
+}
+
+.book-card{
+  background-color: white;
+  border: 0px;
+  width: 390px;
+  margin: 20px;
+  padding: 20px 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-shadow:rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 3%;
+}
+
+
+.book-show-info{
+  padding: 20px 10px;
+}
+
+.book-show-info h2{
+  font-size: 26px;
+}
+
+.book-show-info h3{
+  font-size: 22px;
+}
+
+.show-card-links a{
+  background-color: lightgrey;
+  color: black;
+  padding: 10px;
+  border-radius: 3%;
+  margin: 50px;
+  text-decoration: none;
+}
+
+.show-card-links a:hover{
+  color: white;
+}
