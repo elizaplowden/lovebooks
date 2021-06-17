@@ -1,4 +1,4 @@
-.show-container{
+.lists-show-container{
   padding: 20px;
 }
 
@@ -9,15 +9,15 @@
   padding: 30px;
 }
 
-.books-grid{
+.lists-books-grid{
   margin: 20px 20px 60px 20px;
 }
 
-.book-container{
+.lists-book-container{
   display: flex;
 }
 
-.book-card{
+.lists-book-card{
   background-color: white;
   border: 0px;
   width: 390px;
@@ -31,19 +31,19 @@
 }
 
 
-.book-show-info{
+.lists-book-show-info{
   padding: 20px 10px;
 }
 
-.book-show-info h2{
+.lists-book-show-info h2{
   font-size: 26px;
 }
 
-.book-show-info h3{
+.lists-ook-show-info h3{
   font-size: 22px;
 }
 
-.show-card-links a{
+.lists-show-card-links a{
   background-color: lightgrey;
   color: black;
   padding: 10px;
@@ -52,6 +52,6 @@
   text-decoration: none;
 }
 
-.show-card-links a:hover{
+.lists0show-card-links a:hover{
   color: white;
 }
