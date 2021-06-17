@@ -1,3 +1,4 @@
-const yeppers = document.getElementById('<%= dom_id(@book) %>').classList.add("accepted");
+document.getElementById('<%= dom_id(@book) %>').classList.add("accepted");
 
 
+setTimeout(() => { document.getElementById('<%= dom_id(@book) %>').remove()} , 3000);
