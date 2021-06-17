@@ -2,7 +2,7 @@
   padding: 20px;
 }
 
-.show-card-banner h2{
+.lists-show-card-banner h2{
   margin-left: 50px;
   font-weight: bolder;
   font-size: 30px;
@@ -11,10 +11,14 @@
 
 .lists-books-grid{
   margin: 20px 20px 60px 20px;
+
 }
 
 .lists-book-container{
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  grid-gap: 20px;
+  padding: 60px;
 }
 
 .lists-book-card{

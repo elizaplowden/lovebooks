@@ -1,34 +1,34 @@
-<div class="container">
-  <div class="lists-show-container">
-    <div class="lists-show-card-banner">
-      <h2><%= @list.name %></h2>
-    </div>
-    <div class="lists-books-grid">
-      <div class="lists-book-container">
-        <% books = @list.books %>
-        <% books.each do |book| %>
-        <div class="lists-book-card">
-          <div class="lists-book-show-image">
-            <%= image_tag book.image_url %>
-          </div>
-          <div class="lists-book-show-info">
-            <h2 class="lists-book-title"><%= book.title %></h2>
-            <h3 class="lists-book-author"><%= book.author %></h3>
-            <div class="lists-book-delete">
-              <%= link_to 'Remove', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
-            </div>
-          </div>
 
-        </div>
-        <% end %>
-      </div>
-    </div>
-    <div class="lists-show-card-links">
-
-      <%= link_to 'Go back to books', books_path%>
-    </div>
-
-
+<div class="lists-show-container">
+  <div class="lists-show-card-banner">
+    <h2><%= @list.name %></h2>
   </div>
+  <div class="lists-books-grid">
+    <div class="lists-book-container">
+      <% books = @list.books %>
+      <% books.each do |book| %>
+      <div class="lists-book-card">
+        <div class="lists-book-show-image">
+          <%= image_tag book.image_url %>
+        </div>
+        <div class="lists-book-show-info">
+          <h2 class="lists-book-title"><%= book.title %></h2>
+          <h3 class="lists-book-author"><%= book.author %></h3>
+          <div class="lists-book-delete">
+            <%= link_to 'Remove', book_lists_path(@list.id), method: :delete, data: { confirm: 'Are you sure?' } %>
+          </div>
+        </div>
+
+      </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="lists-show-card-links">
+
+    <%= link_to 'Go back to books', books_path%>
+  </div>
+
+
 </div>
+
 
