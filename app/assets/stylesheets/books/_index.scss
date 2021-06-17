@@ -6,6 +6,7 @@
 
 .book-card {
   border: 1px solid black;
+  position: absolute;
 }
 
 .buttons-holder {
@@ -18,10 +19,6 @@
 .book-image {
   width: 322px;
   margin: 0 auto;
-}
-
-.absolutely {
-  position: absolute;
 }
 
 .hidden {
