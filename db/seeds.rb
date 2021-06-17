@@ -13,9 +13,9 @@ User.destroy_all
 
 user = User.create( email: "test@test.com", password: '123456')
 
-list = List.new(name:"Great Books")
-list.user_id = user.id
-list.save
+# list = List.new(name:"Great Books")
+# list.user_id = user.id
+# list.save
 
 books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https://storage.googleapis.com/du-prd/books/images/9780316420082.jpg', isbn13: 9780316420082 },
 { title: 'MALIBU RISING', author: 'Taylor Jenkins Reid', book_image: 'https://storage.googleapis.com/du-prd/books/images/9781524798659.jpg', isbn13: 9781524798659 },
@@ -28,7 +28,7 @@ books = [{ title: 'GOLDEN GIRL', author: 'Elin Hilderbrand', book_image: 'https:
 
 books.each_with_index do |book, index|
   subject = Book.create!(title: book[:title], author: book[:author], image_url: book[:book_image], isbn: book[:isbn])
-   if index == 0
-    BookList.create(book_id: subject.id, list_id: list.id)
-  end
+  #  if index == 0
+  #   BookList.create(book_id: subject.id, list_id: list.id)
+  # end
 end
