@@ -10,6 +10,7 @@
           <button type="button" class="btn btn-warning but-button" id="<%= book.id %>">Not interested</button>
           <%= form_with(model: BookList.new, local: false) do |f| %>
             <%= f.hidden_field :book_id, value:book.id %>
+            <%= book.id %>
             <%= f.hidden_field :list_id, value: current_user.lists.first.id %>
             <%= f.submit "Add book", class: 'btn btn-primary but-button' %>
           <% end %>
