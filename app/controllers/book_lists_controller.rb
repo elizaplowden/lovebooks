@@ -1,6 +1,6 @@
 class BookListsController < ApplicationController
   def create
-    @booklist = BookList.new(booklist_params)
+    @booklist = BookList.create!(booklist_params)
     @book = Book.find(@booklist.book_id)
     respond_to do |format|
         format.js {}
